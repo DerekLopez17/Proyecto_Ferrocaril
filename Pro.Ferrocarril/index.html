@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Rieles de Bugaba — Un viaje por nuestra memoria</title>
+<meta name="description" content="Experiencia web inmersiva sobre la antigua estación ferroviaria de Bugaba, Chiriquí, Panamá. Recorrido 360°, modelo 3D e historia." />
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+
+<!-- Styles -->
+<link rel="stylesheet" href="css/style.css" />
+
+<!-- A-Frame (for 3D viewer and 360 tour) -->
+<script src="https://cdn.jsdelivr.net/npm/aframe@1.5.0/dist/aframe-master.min.js"></script>
+
+<link rel="icon" href="assets/images/logo.jpg" type="image/jpeg">
+</head>
+<body>
+
+<!-- ============ SKIP LINK (Accessibility) ============ -->
+<a class="skip-link" href="#main">Saltar al contenido principal</a>
+
+<!-- ============ HEADER ============ -->
+<header class="site-header" id="inicio">
+  <div class="header-inner">
+    <a class="brand" href="#inicio" aria-label="Rieles de Bugaba, inicio">
+      <img src="assets/images/logo.jpg" alt="Logotipo del Museo del Ferrocarril Bugabeño" class="brand-logo" />
+      <span class="brand-text">
+        <strong>Rieles de Bugaba</strong>
+        <em>Un viaje por nuestra memoria</em>
+      </span>
+    </a>
+
+    <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="Abrir menú de navegación">
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav class="primary-nav" id="primaryNav" aria-label="Navegación principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#tour360">Recorrido 360°</a></li>
+        <li><a href="#modelo3d">Locomotora 3D</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#galeria">Galería</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- ============ A. HERO / BIENVENIDA ============ -->
+  <section class="hero" aria-label="Presentación del proyecto">
+    <div class="hero-media">
+      <img src="assets/images/hero-estacion.jpg" alt="Locomotora antigua amarilla frente al Museo del Ferrocarril Bugabeño, Chiriquí, Panamá" />
+      <div class="hero-overlay"></div>
+    </div>
+    <div class="hero-content">
+      <span class="eyebrow eyebrow-rule">Museo del Ferrocarril Bugabeño · 1916</span>
+      <h1>Un viaje por<br /><em>nuestra historia.</em></h1>
+      <p>
+        Hay lugares que guardan historias. Descubre la antigua estación del
+        ferrocarril de Bugaba a través de una experiencia que une patrimonio,
+        tecnología y memoria.
+      </p>
+      <div class="hero-actions">
+        <a href="#experiencia" class="btn btn-primary">Comenzar experiencia <span aria-hidden="true">↗</span></a>
+        <a href="#experiencia" class="btn btn-text">Conoce el proyecto <span aria-hidden="true">↓</span></a>
+      </div>
+    </div>
+    <div class="hero-footer">
+      <span class="eyebrow eyebrow-rule">Bugaba, Chiriquí · Panamá</span>
+    </div>
+  </section>
+
+  <!-- ============ B. EXPLORA LA EXPERIENCIA ============ -->
+  <section class="section experience-cards" id="experiencia" aria-label="Explora la experiencia">
+    <div class="section-head">
+      <span class="eyebrow">Explora</span>
+      <h2>Explora la experiencia</h2>
+      <p>Cuatro formas de recorrer el patrimonio ferroviario de Bugaba, cada una impulsada por una tecnología inmersiva distinta.</p>
+    </div>
+
+    <div class="cards-grid">
+      <article class="exp-card">
+        <div class="exp-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><circle cx="32" cy="32" r="22" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M32 10a22 22 0 0 1 0 44" stroke="currentColor" stroke-width="2.5" fill="none" stroke-dasharray="4 4"/><circle cx="32" cy="32" r="5" fill="currentColor"/></svg>
+        </div>
+        <h3>Recorrido 360°</h3>
+        <p>Explora el entorno de la antigua estación en una vista panorámica envolvente.</p>
+        <a href="#tour360" class="btn btn-ghost">Entrar al recorrido</a>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M32 6 56 19v26L32 58 8 45V19Z" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M32 6v26M8 19l24 13M56 19 32 32" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <h3>Locomotora 3D</h3>
+        <p>Observa, rota y acerca un modelo tridimensional de la locomotora histórica.</p>
+        <a href="#modelo3d" class="btn btn-ghost">Ver modelo 3D</a>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><path d="M8 48V20a4 4 0 0 1 4-4h12l4-6h8l4 6h12a4 4 0 0 1 4 4v28Z" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="32" cy="32" r="8" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <h3>Historia y memoria</h3>
+        <p>Conoce el relato y la línea de tiempo del patrimonio ferroviario de Bugaba.</p>
+        <a href="#historia" class="btn btn-ghost">Leer la historia</a>
+      </article>
+
+      <article class="exp-card">
+        <div class="exp-card-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64"><rect x="8" y="12" width="48" height="40" rx="3" fill="none" stroke="currentColor" stroke-width="2.5"/><circle cx="20" cy="24" r="4" fill="none" stroke="currentColor" stroke-width="2.5"/><path d="M12 46 24 32l8 8 10-12 10 14" fill="none" stroke="currentColor" stroke-width="2.5"/></svg>
+        </div>
+        <h3>Galería fotográfica</h3>
+        <p>Un archivo visual con imágenes de la estación y su entorno.</p>
+        <a href="#galeria" class="btn btn-ghost">Ver galería</a>
+      </article>
+    </div>
+  </section>
+
+  <!-- ============ C. RECORRIDO 360° ============ -->
+  <section class="section section-dark" id="tour360" aria-label="Recorrido 360 grados">
+    <div class="section-head">
+      <span class="eyebrow">Experiencia inmersiva</span>
+      <h2>Recorrido 360°</h2>
+      <p>Mira a tu alrededor dentro de la antigua estación. Arrastra con el mouse, o mueve tu celular si tienes el giroscopio activado.</p>
+    </div>
+
+    <div class="viewer-shell" id="tour360Shell">
+      <div class="viewer-status" id="tour360Status" role="status">
+        <div class="spinner" aria-hidden="true"></div>
+        <p>Cargando recorrido panorámico…</p>
+      </div>
+
+      <a-scene
+        id="tour360Scene"
+        embedded
+        vr-mode-ui="enabled: true"
+        loading-screen="enabled: false"
+        renderer="antialias: true; colorManagement: true"
+        style="display:none;">
+        <a-assets timeout="15000">
+          <video id="pano360Video" src="assets/360/estacion-360.mp4" crossorigin="anonymous" loop playsinline muted webkit-playsinline></video>
+        </a-assets>
+
+        <!-- Panoramic video sphere -->
+        <a-videosphere src="#pano360Video" rotation="0 -90 0"></a-videosphere>
+
+        <a-entity id="tour360Camera" camera look-controls="reverseMouseDrag: true" wasd-controls="enabled: false" position="0 1.6 0"></a-entity>
+      </a-scene>
+
+      <div class="viewer-error" id="tour360Error" hidden role="alert">
+        <p>No se pudo cargar el video panorámico 360°.</p>
+        <p class="viewer-hint">Verifica que el archivo <code>assets/360/estacion-360.mp4</code> exista y sea un video equirectangular 360°.</p>
+      </div>
+
+      <div class="viewer-controls">
+        <button id="tour360PlayPause" class="btn btn-small" type="button" disabled>Reproducir / Pausar</button>
+        <button id="tour360Reset" class="btn btn-small" type="button" disabled>Reiniciar vista</button>
+        <span class="viewer-note">Usa el mouse (clic y arrastra) o el giroscopio del celular para mirar alrededor.</span>
+      </div>
+    </div>
+  </section>
+
+<!-- ============ D. LOCOMOTORA 3D ============ -->
+  <section class="section" id="modelo3d" aria-label="Visor 3D de la locomotora">
+    <div class="section-head">
+      <span class="eyebrow">Modelo tridimensional</span>
+      <h2>Locomotora 3D</h2>
+      <p>Observa la locomotora desde cualquier ángulo. Arrastra para rotar y usa la rueda del mouse o pellizca para acercar.</p>
+    </div>
+
+    <div class="model-layout">
+      
+      <!-- COLUMNA IZQUIERDA: Visor 3D + Foto Real -->
+      <div class="model-visuals">
+        
+        <div class="viewer-shell" id="model3dShell">
+          <div class="viewer-status" id="model3dStatus" role="status">
+            <div class="spinner" aria-hidden="true"></div>
+            <p>Cargando modelo 3D…</p>
+          </div>
+
+          <a-scene
+            id="model3dScene"
+            embedded
+            loading-screen="enabled: false"
+            renderer="antialias: true; colorManagement: true"
+            style="display:none;">
+            <a-assets timeout="15000">
+              <a-asset-item id="locomotoraAsset" src="assets/models/locomotora.glb"></a-asset-item>
+            </a-assets>
+
+            <a-entity id="locomotoraEntity"
+              gltf-model="#locomotoraAsset"
+              position="0 0 0"
+              scale="1 1 1"
+              rotation="0 45 0">
+            </a-entity>
+
+            <!-- Demo placeholder shown only if the real GLB model fails to load -->
+            <a-entity id="demoPlaceholder" visible="false">
+              <a-box color="#C6A66A" depth="0.6" height="0.6" width="1.6" position="0 0.3 0"></a-box>
+              <a-cylinder color="#173B30" radius="0.3" height="0.6" position="0 0.3 0.9" rotation="90 0 0"></a-cylinder>
+              <a-text value="MODELO DE DEMOSTRACIÓN" align="center" color="#F2EBDD" position="0 1.2 0" width="4"></a-text>
+            </a-entity>
+
+            <!-- Cámara con controles orbitales -->
+            <a-entity id="model3dCamera" camera="fov: 45" position="0 1.5 4.5" look-controls="enabled: false" orbit-controls="target: 0 0.5 0; minDistance: 1.5; maxDistance: 10; initialPosition: 0 1.5 4.5"></a-entity>
+
+            <!-- Luces de estudio mejoradas -->
+            <a-entity light="type: ambient; intensity: 0.6; color: #FFF6E5"></a-entity>
+            <a-entity light="type: directional; intensity: 1.2; color: #FFF8EC" position="5 10 7"></a-entity>
+            <a-entity light="type: point; intensity: 0.5; color: #C6A66A" position="-5 5 -5"></a-entity>
+
+            <!-- Cielo verde oscuro -->
+            <a-sky color="#102A22"></a-sky>
+
+            <!-- El Suelo -->
+            <a-circle radius="10" color="#173B30" position="0 -0.01 0" rotation="-90 0 0" shadow="receive: true"></a-circle>
+
+            <!-- Sombra falsa debajo del tren -->
+            <a-circle radius="1.5" color="#000000" opacity="0.4" position="0 0 0" rotation="-90 0 0" material="transparent: true"></a-circle>
+
+          </a-scene>
+
+          <div class="viewer-error" id="model3dError" role="alert">
+            <p>No se pudo cargar el modelo 3D de la locomotora.</p>
+            <p class="viewer-hint">Mostrando una representación de demostración mientras se incorpora el modelo definitivo en <code>assets/models/locomotora.glb</code>.</p>
+          </div>
+        </div>
+
+        <!-- NUEVA FOTO REAL -->
+        <figure class="model-real-photo">
+          <img src="assets/images/locomotora-real.jpg" alt="Locomotora amarilla real en el Museo del Ferrocarril Bugabeño" />
+          <figcaption>La locomotora real en los andenes del museo. <br><em>Modelo 3D digitalizado a partir de esta pieza.</em></figcaption>
+        </figure>
+
+      </div>
+
+<aside class="model-info">
+  <span class="eyebrow">Ficha técnica</span>
+  <h3>La locomotora histórica</h3>
+  <p id="model3dCaption" class="model-desc">
+    Esta pieza representa la locomotora diésel que operó en la línea del Ferrocarril Nacional de Chiriquí. 
+    Su característico color amarillo y su diseño robusto la convirtieron en un ícono del transporte de carga 
+    y pasajeros en la región.
+  </p>
+
+  <!-- Nueva cita destacada -->
+  <blockquote class="model-quote">
+    "El tren no solo movía carga, movía la economía y la vida de todo un pueblo."
+  </blockquote>
+  
+  <h4>Detalles de la pieza</h4>
+  <ul class="model-details">
+    <li><strong>Origen:</strong> Ferrocarril Nacional de Chiriquí</li>
+    <li><strong>Época:</strong> Mediados del siglo XX</li>
+    <li><strong>Función:</strong> Transporte de carga y pasajeros</li>
+    <li><strong>Ubicación actual:</strong> Museo del Ferrocarril Bugabeño</li>
+  </ul>
+
+  <!-- Cajita interactiva actualizada -->
+  <div class="model-hint-box">
+    <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"><path d="M15 15l6 6m-11-4a7 7 0 1 1 0-14 7 7 0 0 1 0 14z"></path></svg>
+    <p><em>Interactúa con la pieza: arrastra para rotar el modelo y usa la rueda del mouse (o pellizca en el celular) para explorar cada detalle.</em></p>
+  </div>
+</aside>    
+
+    </div>
+  </section>
+
+  <!-- ============ F. HISTORIA Y MEMORIA ============ -->
+  <section class="section history" id="historia" aria-label="Historia y memoria">
+    <div class="section-head">
+      <span class="eyebrow">Museo digital</span>
+      <h2>Historia y memoria</h2>
+      <p>Un espacio editorial dedicado a la memoria ferroviaria de Bugaba.</p>
+    </div>
+
+    <div class="history-intro">
+      <div class="history-text">
+        <h3>El Ferrocarril Nacional de Chiriquí</h3>
+        <p>
+          El Ferrocarril Nacional de Chiriquí conectó por más de siete décadas a David,
+          La Concepción, Boquete y Puerto Armuelles, impulsando el auge agrícola y comercial
+          de la región. Tras su cierre, la antigua estación de Bugaba fue recuperada por el
+          Municipio de Bugaba, con el apoyo del Ministerio de Cultura, para convertirse en el
+          Museo del Ferrocarril Bugabeño: un espacio que hoy resguarda locomotoras, vagones,
+          fotografías históricas y los testimonios de quienes vivieron la época del tren.
+        </p>
+        <p class="source-note">
+          Fuentes: La Estrella de Panamá, Panamá América, Ministerio de Cultura de Panamá (MiCultura),
+          TVN Panamá y El Siglo. Ver enlaces completos al final de esta sección.
+        </p>
+      </div>
+      <figure class="history-photo">
+        <img src="assets/images/hero-estacion.jpg" alt="Fachada del Museo del Ferrocarril Bugabeño con locomotora amarilla" />
+        <figcaption>Museo del Ferrocarril Bugabeño, Chiriquí, Panamá.</figcaption>
+      </figure>
+    </div>
+
+    <h3 class="timeline-title">Línea de tiempo</h3>
+    <ol class="timeline" aria-label="Línea de tiempo del ferrocarril de Bugaba">
+      <li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">1913</span>
+          <h4>Autorización del proyecto</h4>
+          <p>La Asamblea Nacional autoriza el 28 de marzo de 1913 el contrato para construir
+          el Ferrocarril Nacional de Chiriquí, pensado para conectar el distrito de Bugaba,
+          una de las zonas más productivas del país.</p>
+          <span class="timeline-source">Fuente: La Estrella de Panamá</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">22 de abril de 1916</span>
+          <h4>Inauguración oficial</h4>
+          <p>El presidente Belisario Porras inaugura el Ferrocarril Nacional de Chiriquí,
+          con una extensión total de 92.517 kilómetros, marcando el inicio de sus operaciones
+          comerciales y de pasajeros.</p>
+          <span class="timeline-source">Fuente: Panamá América, Ministerio de Cultura de Panamá</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">Décadas de 1940–1980</span>
+          <h4>Auge regional</h4>
+          <p>El ferrocarril se convierte en el eje de transporte de carga y pasajeros entre
+          David, La Concepción, Boquete y Puerto Armuelles, impulsando el desarrollo agrícola
+          y comercial de Chiriquí durante varias décadas.</p>
+          <span class="timeline-source">Fuente: La Estrella de Panamá</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">Fines de 1980 – años 90</span>
+          <h4>Cese de operaciones</h4>
+          <p>El servicio de pasajeros se suspende hacia 1988 y, poco después, cesa también
+          el transporte de carga. Las fuentes consultadas no coinciden en una fecha exacta
+          de cierre definitivo: algunas ubican el fin de operaciones a inicios de los años 90,
+          mientras que un estudio académico sitúa el cese formal en 1997.</p>
+          <span class="timeline-source">Fuentes: Trenopedia; tesis de Daniel Samudio (UNACHI)</span>
+        </div>
+      </li>
+      <li class="timeline-item">
+        <span class="timeline-dot" aria-hidden="true"></span>
+        <div class="timeline-card">
+          <span class="timeline-year">Actualidad</span>
+          <h4>Museo del Ferrocarril Bugabeño</h4>
+          <p>La antigua estación de Bugaba es restaurada con fondos de descentralización del
+          Municipio de Bugaba y el apoyo del Ministerio de Cultura (inversión superior a
+          $287,000), dando lugar al Museo del Ferrocarril Bugabeño, dirigido por Samuel
+          Samudio, que preserva vagones, locomotoras y la memoria viva de quienes trabajaron
+          en el tren.</p>
+          <span class="timeline-source">Fuentes: Panamá América, TVN Panamá, El Siglo</span>
+        </div>
+      </li>
+    </ol>
+
+    <div class="sources-box">
+      <h4>Fuentes consultadas</h4>
+      <ul>
+        <li><a href="https://www.laestrella.com.pa/panama/nacional/ferrocarril-chiriqui-proyecto-pionero-CELE492275" target="_blank" rel="noopener">La Estrella de Panamá — El Ferrocarril Nacional de Chiriquí: proyecto pionero</a></li>
+        <li><a href="https://www.panamaamerica.com.pa/rumbos/museo-del-ferrocarril-en-chiriqui-destino-turistico-1224050" target="_blank" rel="noopener">Panamá América — Museo del Ferrocarril en Chiriquí, destino turístico</a></li>
+        <li><a href="https://micultura.gob.pa/avanza-restauracion-del-ferrocarril-de-bugaba" target="_blank" rel="noopener">MiCultura — Avanza restauración del ferrocarril de Bugaba</a></li>
+        <li><a href="https://elsiglo.com.pa/panama/nacionales/memoria-sobre-rieles-el-tren-chiricano-FI9903205" target="_blank" rel="noopener">El Siglo — Memoria sobre rieles: el tren chiricano</a></li>
+        <li><a href="https://trenopedia.com/?p=258" target="_blank" rel="noopener">Trenopedia — Train travel in Panama</a></li>
+        <li><a href="https://jadimike.unachi.ac.pa/handle/123456789/1717" target="_blank" rel="noopener">UNACHI — Tesis: El ferrocarril nacional de Chiriquí (Daniel Samudio)</a></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ GALERÍA FOTOGRÁFICA ============ -->
+<section class="section" id="galeria" aria-label="Galería fotográfica">
+  <div class="section-head">
+    <span class="eyebrow">Archivo visual</span>
+    <h2>Galería fotográfica</h2>
+    <p>Un recorrido visual por la historia, la restauración y el presente del Museo del Ferrocarril Bugabeño.</p>
+  </div>
+
+  <div class="gallery-grid">
+    <!-- Foto Histórica Principal (Ocupa TODO el ancho) -->
+    <figure class="gallery-item gallery-item--full">
+      <img src="assets/images/1944.jpg" alt="Estación del Ferrocarril en el distrito de Bugaba, 1944" loading="lazy" />
+      <figcaption>Estación del Ferrocarril en Bugaba, 1944. <br><em>Archivo histórico.</em></figcaption>
+    </figure>
+
+    <!-- Foto de la Locomotora en el andén -->
+    <figure class="gallery-item">
+      <img src="assets/images/locomotora-real.jpg" alt="Locomotora amarilla en el andén del museo" loading="lazy" />
+      <figcaption>La locomotora en el andén principal.</figcaption>
+    </figure>
+
+    <!-- Foto del Proceso de Restauración (Grúa) -->
+    <figure class="gallery-item">
+      <img src="assets/images/proceso_de_restauracion.jpg" alt="Proceso de restauración de la locomotora" loading="lazy" />
+      <figcaption>Proceso de restauración.</figcaption>
+    </figure>
+
+    <!-- Foto del Vagón -->
+    <figure class="gallery-item">
+      <img src="assets/images/vagon.jpg" alt="Vagón histórico del ferrocarril" loading="lazy" />
+      <figcaption>Vagón histórico.</figcaption>
+    </figure>
+
+    <!-- Collage de 4 fotos -->
+    <figure class="gallery-item">
+      <img src="assets/images/4fotos.jpg" alt="Collage de detalles del museo" loading="lazy" />
+      <figcaption>Detalles de la estación.</figcaption>
+    </figure>
+  </div>
+</section>
+
+</main>
+
+<!-- ============ G. FOOTER ============ -->
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <img src="assets/images/logo.jpg" alt="Logotipo Museo del Ferrocarril Bugabeño" class="footer-logo" />
+      <p class="footer-tagline">Patrimonio que nos conecta</p>
+    </div>
+
+    <div class="footer-location">
+      <h4>Ubicación</h4>
+      <p>Bugaba, Chiriquí, Panamá</p>
+    </div>
+
+    <nav class="footer-nav" aria-label="Enlaces del pie de página">
+      <h4>Navegación</h4>
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#experiencia">Experiencia</a></li>
+        <li><a href="#tour360">Recorrido 360°</a></li>
+        <li><a href="#modelo3d">Locomotora 3D</a></li>
+        <li><a href="#historia">Historia</a></li>
+        <li><a href="#galeria">Galería</a></li>
+      </ul>
+    </nav>
+
+    <div class="footer-about">
+      <h4>Rieles de Bugaba</h4>
+      <p>Proyecto académico de patrimonio digital e inmersivo dedicado a la memoria ferroviaria de Bugaba, Chiriquí, Panamá.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; <span id="year"></span> Rieles de Bugaba — Un viaje por nuestra memoria. Proyecto académico sin fines de lucro.</p>
+  </div>
+</footer>
+
+<!-- A-Frame extra component: orbit-controls (for the 3D model viewer) -->
+<script src="https://cdn.jsdelivr.net/npm/aframe-orbit-controls@1.3.2/dist/aframe-orbit-controls.min.js"></script>
+
+<!-- Scripts -->
+<script src="js/main.js"></script>
+<script src="js/experience360.js"></script>
+<script src="js/model3d.js"></script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+MARCADOR HIRO — Instrucciones
+==============================
+
+Este proyecto usa el marcador "Hiro", el patrón de prueba estándar incluido en AR.js.
+No necesitas crear un marcador nuevo: AR.js lo reconoce automáticamente mediante el
+preset "hiro" declarado en augmentedReality.js (atributo type="pattern" preset="hiro").
+
+Cómo obtenerlo e imprimirlo:
+
+1. Descarga la imagen oficial del marcador Hiro desde el repositorio de AR.js:
+   https://github.com/AR-js-org/AR.js/blob/master/data/images/hiro.png
+
+2. Imprímelo en papel (tamaño mínimo recomendado: 10 x 10 cm) o muéstralo en la
+   pantalla de otro dispositivo (tablet, otro celular o laptop) con buen brillo.
+
+3. Evita reflejos y asegúrate de que el marcador esté bien iluminado y con buen
+   contraste frente a la cámara.
+
+4. Si quieres usar un marcador personalizado con el logotipo de "Rieles de Bugaba"
+   en lugar del Hiro genérico, puedes generarlo en:
+   https://ar-js-org.github.io/AR.js/three.js/examples/marker-training/examples/generator.html
+   Luego reemplaza preset="hiro" por type="pattern" url="assets/markers/tu-marcador.patt"
+   en augmentedReality.js, y coloca el archivo .patt resultante en esta carpeta.
+
+Esta nota es solo informativa: no representa el marcador en sí, que debe
+descargarse o generarse siguiendo los pasos anteriores.
